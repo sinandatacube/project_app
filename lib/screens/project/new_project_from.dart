@@ -240,9 +240,7 @@ class _NewProjectFromState extends State<NewProjectFrom> {
                   },
                   builder: (context, state) {
                     final bool isLoading = state is ProjectLoading;
-                    return SizedBox(
-                      width: double.infinity,
-                      height: 50,
+                    return Center(
                       child: ElevatedButton(
                         onPressed:
                             isLoading
@@ -259,9 +257,6 @@ class _NewProjectFromState extends State<NewProjectFrom> {
                                   }
                                 },
                         style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(_borderRadius),
-                          ),
                           backgroundColor: theme.colorScheme.primary,
                         ),
                         child:
@@ -270,13 +265,7 @@ class _NewProjectFromState extends State<NewProjectFrom> {
                                   size: 30,
                                   color: Colors.white,
                                 )
-                                : const Text(
-                                  'Add Project',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 18,
-                                  ),
-                                ),
+                                : const Text('Add Project'),
                       ),
                     );
                   },

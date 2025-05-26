@@ -17,8 +17,10 @@ class ProjectLocationsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.sizeOf(context);
+    final theme = Theme.of(context);
+
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(backgroundColor: theme.primaryColor),
       body: FutureBuilder(
         future: LocationPermissions.determinePosition(),
         builder: (context, AsyncSnapshot snapshot) {

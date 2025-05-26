@@ -21,10 +21,11 @@ class Chooselocation extends StatefulWidget {
 class _ChooselocationState extends State<Chooselocation> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.sizeOf(context);
+    final theme = Theme.of(context);
 
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: appbar(),
+      appBar: appbar(theme),
       body: FutureBuilder(
         future: LocationPermissions.determinePosition(),
         builder: (context, AsyncSnapshot snapshot) {
@@ -69,10 +70,11 @@ class _ChooselocationState extends State<Chooselocation> {
     );
   }
 
-  AppBar appbar() {
+  AppBar appbar(ThemeData theme) {
     return AppBar(
       elevation: 5,
       // surfaceTintColor: Colors.white,
+      backgroundColor: theme.primaryColor,
       leading: IconButton(
         onPressed: () {
           navigatorKey.currentState!.pop();

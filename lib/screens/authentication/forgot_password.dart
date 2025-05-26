@@ -26,8 +26,12 @@ class ForgotPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Scaffold(
-      appBar: AppBar(title: Text('Forgot Password')),
+      appBar: AppBar(
+        backgroundColor: theme.primaryColor,
+        title: Text('Forgot Password'),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
@@ -52,6 +56,9 @@ class ForgotPassword extends StatelessWidget {
               SizedBox(height: 20),
               Center(
                 child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: theme.primaryColor,
+                  ),
                   onPressed: () => _sendResetEmail(),
                   child: Text('Send Reset Link'),
                 ),

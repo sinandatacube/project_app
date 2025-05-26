@@ -228,7 +228,7 @@ class _RegistrationState extends State<Registration> {
                         child: ElevatedButton(
                           onPressed: state is AuthLoading ? null : _register,
                           style: ElevatedButton.styleFrom(
-                            elevation: 4,
+                            backgroundColor: theme.primaryColor,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),

@@ -44,6 +44,12 @@ class AuthenicationCubit extends Cubit<AuthenicationState> {
       } else if (e.code == 'invalid-email') {
         emit(AuthFailed(error: 'Invalid email address format.'));
         // return 'Invalid email address format.';
+      } else if (e.code == 'weak-password') {
+        emit(
+          AuthFailed(
+            error: 'Password is too weak. It should be at least 6 characters.',
+          ),
+        );
       } else {
         return e.message;
       }
